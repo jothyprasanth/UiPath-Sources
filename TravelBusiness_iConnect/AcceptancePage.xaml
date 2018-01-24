@@ -1,0 +1,1174 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="AcceptancePage"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="row" Type="InArgument(sd:DataRow)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>AcceptancePage_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Core.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="AcceptancePage" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe AXA'" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="9c397c5c13769a7211b9fefde9c8634f" Selector="&lt;html title='AXA iConnect' /&gt;">
+          <ui:BrowserScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="ui:GenericValue" Name="policyNo" />
+                  <Variable x:TypeArguments="x:Boolean" Name="lastpage" />
+                </Sequence.Variables>
+                <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'SPAN'" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="da6440250137559d406d39f46e821c8d" Selector="&lt;webctrl aaname='Main Traveller' parentid='RULE_KEY' tag='SPAN' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="pgdn" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="COMPLETE" />
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+                <ui:TypeInto DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="1000" DisplayName="Type into 'INPUT  Surname'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Main Traveller-Name&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6a21bb2ce93f87c2bec18d6518796bdb" Selector="&lt;webctrl id='Surname' name='$PpyWorkPage$pTravellingAdults$l1$pSurname' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="800" DisplayName="Select item 'SELECT  Nationality'" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[row(&quot;Main Traveller-Nationality&quot;).ToString.ToUpper]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="512">
+                      <x:String>--</x:String>
+                      <x:String>AFGHANISTAN</x:String>
+                      <x:String>ALBANIA</x:String>
+                      <x:String>ALGERIA</x:String>
+                      <x:String>AMERICAN SAMOA</x:String>
+                      <x:String>ANDORRA</x:String>
+                      <x:String>ANGOLA</x:String>
+                      <x:String>ANGUILA</x:String>
+                      <x:String>ANTARTICA</x:String>
+                      <x:String>ANTIGUA &amp; BARBUDA</x:String>
+                      <x:String>ARCTIC OCEAN</x:String>
+                      <x:String>ARGENTINA</x:String>
+                      <x:String>ARMENIA</x:String>
+                      <x:String>ARUBA</x:String>
+                      <x:String>ASHMORE &amp; CARTIER ISLAND</x:String>
+                      <x:String>ATLANTIC OCEAN</x:String>
+                      <x:String>AUSTRALIA</x:String>
+                      <x:String>AUSTRIA</x:String>
+                      <x:String>AZERBAIJAN</x:String>
+                      <x:String>BAHAMAS</x:String>
+                      <x:String>BAHRAIN</x:String>
+                      <x:String>BAKER ISLAND</x:String>
+                      <x:String>BANGLADESH</x:String>
+                      <x:String>BARBADOS</x:String>
+                      <x:String>BASSAS DA INDIA</x:String>
+                      <x:String>BCLARUS</x:String>
+                      <x:String>BELARUS</x:String>
+                      <x:String>BELGIUM</x:String>
+                      <x:String>BELIZE</x:String>
+                      <x:String>BENIN</x:String>
+                      <x:String>BERMUDA</x:String>
+                      <x:String>BHUTAN</x:String>
+                      <x:String>BOLIVIA</x:String>
+                      <x:String>BOSNIA &amp; HERZEGOVINA</x:String>
+                      <x:String>BOTSWANA</x:String>
+                      <x:String>BOUVET ISLAND</x:String>
+                      <x:String>BRAZIL</x:String>
+                      <x:String>BRITISH INDIAN OCEAN</x:String>
+                      <x:String>BRITISH VIRGIN ISLAND</x:String>
+                      <x:String>BRUNEI DARUSSALAM(B.S.BEGAWAN)</x:String>
+                      <x:String>BRUSSELS</x:String>
+                      <x:String>BULGARIA</x:String>
+                      <x:String>BURKINA FASO</x:String>
+                      <x:String>BURUNDI</x:String>
+                      <x:String>CAMBODIA</x:String>
+                      <x:String>CAMEROON</x:String>
+                      <x:String>CANADA</x:String>
+                      <x:String>CAPE VERDE</x:String>
+                      <x:String>CAYMAN ISLANDS</x:String>
+                      <x:String>CENTRAL AFRICAN REPUBLIC</x:String>
+                      <x:String>CHAD</x:String>
+                      <x:String>CHILE</x:String>
+                      <x:String>CHINA</x:String>
+                      <x:String>CHRISTMAS ISLAND</x:String>
+                      <x:String>CLIPPERTON ISLAND</x:String>
+                      <x:String>COCOS/KEELING ISLAND</x:String>
+                      <x:String>COLUMBIA</x:String>
+                      <x:String>COMOROS</x:String>
+                      <x:String>CONGO DEMOCRATIC REP OF THE</x:String>
+                      <x:String>CONGO REPUBLIC OF THE</x:String>
+                      <x:String>COOK ISLAND</x:String>
+                      <x:String>CORAL SEA ISLAND</x:String>
+                      <x:String>COSTA RICA</x:String>
+                      <x:String>COTE D'IVOIRE</x:String>
+                      <x:String>CROATIA</x:String>
+                      <x:String>CUBA</x:String>
+                      <x:String>CYPRUS</x:String>
+                      <x:String>CZECHOSLOVAKIA</x:String>
+                      <x:String>DENMARK</x:String>
+                      <x:String>DJIBOUTI</x:String>
+                      <x:String>DOMINICA</x:String>
+                      <x:String>DOMINICAN REPUBLIC</x:String>
+                      <x:String>ECUADOR</x:String>
+                      <x:String>EGYPT</x:String>
+                      <x:String>EL SALVADOS</x:String>
+                      <x:String>ENGLAND</x:String>
+                      <x:String>EQUATORIAL GUINEA</x:String>
+                      <x:String>ERITREA</x:String>
+                      <x:String>ESTONIA</x:String>
+                      <x:String>ETHIOPIA</x:String>
+                      <x:String>EUROPA ISLAND</x:String>
+                      <x:String>FALKLAND ISLAND</x:String>
+                      <x:String>FAROC ISLAND</x:String>
+                      <x:String>FIJI ISLANDS</x:String>
+                      <x:String>FINLAND</x:String>
+                      <x:String>FRANCE</x:String>
+                      <x:String>FRENCH GUIANA</x:String>
+                      <x:String>FRENCH POLYNESIA</x:String>
+                      <x:String>FRENCH SOUTHERN &amp; ANTARTICA</x:String>
+                      <x:String>GABON</x:String>
+                      <x:String>GAMBIA</x:String>
+                      <x:String>GAZA STRIP</x:String>
+                      <x:String>GEORGIA</x:String>
+                      <x:String>GERMANY</x:String>
+                      <x:String>GHANA</x:String>
+                      <x:String>GIBRALTAR</x:String>
+                      <x:String>GLORIOSA ISLAND</x:String>
+                      <x:String>GREECE</x:String>
+                      <x:String>GREENLAND</x:String>
+                      <x:String>GRENADA</x:String>
+                      <x:String>GUADELOUPE</x:String>
+                      <x:String>GUAM, NORTH PACIFIC OCEAN</x:String>
+                      <x:String>GUATEMALA</x:String>
+                      <x:String>GUERNSEY</x:String>
+                      <x:String>GUINEA</x:String>
+                      <x:String>GUINEA-BISSAU</x:String>
+                      <x:String>GUYANA</x:String>
+                      <x:String>HAITI</x:String>
+                      <x:String>HCARD ISLD &amp; MCDONALD ISLD</x:String>
+                      <x:String>HOLY SEE</x:String>
+                      <x:String>HONDURAS</x:String>
+                      <x:String>HONG KONG</x:String>
+                      <x:String>HOWLAND ISLAND</x:String>
+                      <x:String>HUNGARY</x:String>
+                      <x:String>ICELAND</x:String>
+                      <x:String>INDIA</x:String>
+                      <x:String>INDIAN OCEAN</x:String>
+                      <x:String>INDONESIA</x:String>
+                      <x:String>IRAN</x:String>
+                      <x:String>IRAQ</x:String>
+                      <x:String>IRELAND</x:String>
+                      <x:String>ISLE OF MAN</x:String>
+                      <x:String>ISRAEL</x:String>
+                      <x:String>ITALY</x:String>
+                      <x:String>IVORY COAST</x:String>
+                      <x:String>JAMAICA</x:String>
+                      <x:String>JAN MAYEN</x:String>
+                      <x:String>JAPAN</x:String>
+                      <x:String>JARVIS ISLAND</x:String>
+                      <x:String>JERSEY</x:String>
+                      <x:String>JOHNSTON ATOLL</x:String>
+                      <x:String>JORDAN</x:String>
+                      <x:String>JUAN DE NOVA ISLAND</x:String>
+                      <x:String>KAZAKHSTAN</x:String>
+                      <x:String>KENYA</x:String>
+                      <x:String>KINGMAN REEF</x:String>
+                      <x:String>KIRIBATI</x:String>
+                      <x:String>KOREA REPUBLIC</x:String>
+                      <x:String>KOREA SOUTH</x:String>
+                      <x:String>KOREAN</x:String>
+                      <x:String>KUWAIT</x:String>
+                      <x:String>KYRGYZSTAN</x:String>
+                      <x:String>LAOS</x:String>
+                      <x:String>LATVIA</x:String>
+                      <x:String>LEBANON</x:String>
+                      <x:String>LESOTHO</x:String>
+                      <x:String>LEXEMBOURG</x:String>
+                      <x:String>LIBERIA</x:String>
+                      <x:String>LIBYA</x:String>
+                      <x:String>LIETHUANIA</x:String>
+                      <x:String>LITHUANIA</x:String>
+                      <x:String>MACAU</x:String>
+                      <x:String>MACEDONIA</x:String>
+                      <x:String>MADAGASCAR</x:String>
+                      <x:String>MALAWI</x:String>
+                      <x:String>MALAYSIA</x:String>
+                      <x:String>MALDIVE</x:String>
+                      <x:String>MALI</x:String>
+                      <x:String>MALTA</x:String>
+                      <x:String>MAN, ISLE OF</x:String>
+                      <x:String>MARSHALL ISLAND</x:String>
+                      <x:String>MARTINIQUE</x:String>
+                      <x:String>MAURITANIA</x:String>
+                      <x:String>MAURITIUS</x:String>
+                      <x:String>MAYOTTE</x:String>
+                      <x:String>MEXICO</x:String>
+                      <x:String>MICRONESIA, FEDERATION OF</x:String>
+                      <x:String>MIDWAY ISLAND</x:String>
+                      <x:String>MOLDOVA</x:String>
+                      <x:String>MONACO</x:String>
+                      <x:String>MONGOLIA</x:String>
+                      <x:String>MONTSERRAT</x:String>
+                      <x:String>MOROCCO</x:String>
+                      <x:String>MOZAMBIQUE</x:String>
+                      <x:String>MYANMAR</x:String>
+                      <x:String>NAMIBIA</x:String>
+                      <x:String>NAURU</x:String>
+                      <x:String>NAVASSA ISLAND</x:String>
+                      <x:String>NEPAL</x:String>
+                      <x:String>NETHERLANDS</x:String>
+                      <x:String>NEW CELEDONIA</x:String>
+                      <x:String>NEW ZEALAND</x:String>
+                      <x:String>NICARAGUA</x:String>
+                      <x:String>NIEU</x:String>
+                      <x:String>NIGER</x:String>
+                      <x:String>NIGERIA</x:String>
+                      <x:String>NORFOLK</x:String>
+                      <x:String>NORTH KOREA</x:String>
+                      <x:String>NORTHERN IRELAND</x:String>
+                      <x:String>NORTHERN MARIANA ISLAND</x:String>
+                      <x:String>NORWAY</x:String>
+                      <x:String>OMAN SULTANATE OF</x:String>
+                      <x:String>PACIFIC OCEAN</x:String>
+                      <x:String>PAKISTAN</x:String>
+                      <x:String>PALAU</x:String>
+                      <x:String>PALMYRA ATOLL</x:String>
+                      <x:String>PANAMA</x:String>
+                      <x:String>PAPUA NEW GUINEA</x:String>
+                      <x:String>PARACELL ISLAND</x:String>
+                      <x:String>PARAGUAY</x:String>
+                      <x:String>PERU</x:String>
+                      <x:String>PHILIPPINES</x:String>
+                      <x:String>PITCAIRN ISLAND</x:String>
+                      <x:String>POLAND</x:String>
+                      <x:String>PORTUGAL</x:String>
+                      <x:String>PUERTO RICO</x:String>
+                      <x:String>QATAR</x:String>
+                      <x:String>REUNION ISLANDS</x:String>
+                      <x:String>ROMANIA</x:String>
+                      <x:String>RUSSIA</x:String>
+                      <x:String>RUSSIAN FEDERATION</x:String>
+                      <x:String>RWANDA</x:String>
+                      <x:String>SAINT KITTS &amp; NEVIS</x:String>
+                      <x:String>SAINT LUCIA</x:String>
+                      <x:String>SAMOA</x:String>
+                      <x:String>SAN MARINO</x:String>
+                      <x:String>SAO TOME &amp; PRINCIPE</x:String>
+                      <x:String>SAUDI ARABIA</x:String>
+                      <x:String>SCOTLAND</x:String>
+                      <x:String>SENEGAL</x:String>
+                      <x:String>SERBIA &amp; MONTENEGRO</x:String>
+                      <x:String>SEYCHELLES</x:String>
+                      <x:String>SIERRA LEONE</x:String>
+                      <x:String>SINGAPORE</x:String>
+                      <x:String>SLOVAKIA</x:String>
+                      <x:String>SLOVENIA</x:String>
+                      <x:String>SOLOMON ISLAND</x:String>
+                      <x:String>SOMALIA</x:String>
+                      <x:String>SOUTH AFRICA</x:String>
+                      <x:String>SOUTH GEORGIA/S SANDWICH</x:String>
+                      <x:String>SPAIN</x:String>
+                      <x:String>SPRATLY ISLAND</x:String>
+                      <x:String>SRI LANKA</x:String>
+                      <x:String>ST HELENA</x:String>
+                      <x:String>ST LUCIA</x:String>
+                      <x:String>ST VINCENT &amp; THE GRENADINES</x:String>
+                      <x:String>ST VINCENT AND THE GREDADINES</x:String>
+                      <x:String>SUDAN</x:String>
+                      <x:String>SURINAME</x:String>
+                      <x:String>SVALBARD</x:String>
+                      <x:String>SWAZILAND</x:String>
+                      <x:String>SWEDEN</x:String>
+                      <x:String>SWITZERLAND</x:String>
+                      <x:String>SYRIA</x:String>
+                      <x:String>TAIWAN</x:String>
+                      <x:String>TAJIKISTAN</x:String>
+                      <x:String>TANZANIA</x:String>
+                      <x:String>THAILAND</x:String>
+                      <x:String>TIMOR LESTE</x:String>
+                      <x:String>TOGO</x:String>
+                      <x:String>TOKELAU</x:String>
+                      <x:String>TONGA</x:String>
+                      <x:String>TRINIDAD &amp; TOBAGO</x:String>
+                      <x:String>TROMELIN ISLAND</x:String>
+                      <x:String>TUNISIA</x:String>
+                      <x:String>TURKEY</x:String>
+                      <x:String>TURKMENISTAN</x:String>
+                      <x:String>TURKS &amp; CAICOS ISLAND</x:String>
+                      <x:String>TUVALU</x:String>
+                      <x:String>UGANDA</x:String>
+                      <x:String>UKRAINE</x:String>
+                      <x:String>UNITED ARAB EMIRATES</x:String>
+                      <x:String>UNITED KINGDOM</x:String>
+                      <x:String>UNITED STATES OF AMERICA</x:String>
+                      <x:String>URUGUAY</x:String>
+                      <x:String>UZBEKISTAN</x:String>
+                      <x:String>VANUATU</x:String>
+                      <x:String>VATICAN</x:String>
+                      <x:String>VENEZUELA</x:String>
+                      <x:String>VIETNAM</x:String>
+                      <x:String>VIRGIN ISLAND</x:String>
+                      <x:String>WAKE ISLAND</x:String>
+                      <x:String>WALES</x:String>
+                      <x:String>WALLIS &amp; FUTUNA</x:String>
+                      <x:String>WEST BANK</x:String>
+                      <x:String>WESTERN SAHARA</x:String>
+                      <x:String>WESTERN SAMOA</x:String>
+                      <x:String>YEMEN REPUBLIC</x:String>
+                      <x:String>ZAIRE</x:String>
+                      <x:String>ZAMBIA</x:String>
+                      <x:String>ZIMBABWE</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d1b58bfedcd005e30da6c4015ab65031" Selector="&lt;webctrl id='Nationality' name='$PpyWorkPage$pTravellingAdults$l1$pNationality' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  IDNumber'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Main Traveller-IC/Passport Number&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8d92c42f97c0fddc7dc50d8a111669b7" Selector="&lt;webctrl id='IDNumber' name='$PpyWorkPage$pTravellingAdults$l1$pIDNumber' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <If Condition="[row(&quot;Main Traveller-Gender&quot;).ToString = &quot;Male&quot;]" DisplayName="Main Traveller-Gender" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Then>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  GenderMALE_rdi_1'" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="fdf2a447268a857c225c772232c3c3a6" Selector="&lt;webctrl id='GenderMALE' tag='INPUT' aaname='Male' type='radio' /&gt;" WaitForReady="COMPLETE" />
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </If.Then>
+                  <If.Else>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  GenderFEMALE_rdi...'" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e1f92631fa88a6d9163f5e3b573bc2c4" Selector="&lt;webctrl id='GenderFEMALE' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </If.Else>
+                </If>
+                <If Condition="[row(&quot;Number of Children&quot;).ToString = &quot;1&quot;]" DisplayName="Children Details " sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <ui:TypeInto DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="1000" DisplayName="Type into 'INPUT  Surname'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Insured Child 1-Name&quot;).ToString]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6652fbafc494caf11683f1ab60db751c" Selector="&lt;webctrl id='Surname' name='$PpyWorkPage$pTravellingChild$l1$pSurname' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select item 'SELECT  Nationality'" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[row(&quot;Insured Child 1-Nationality&quot;).ToString.ToUpper]">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="512">
+                            <x:String>--</x:String>
+                            <x:String>AFGHANISTAN</x:String>
+                            <x:String>ALBANIA</x:String>
+                            <x:String>ALGERIA</x:String>
+                            <x:String>AMERICAN SAMOA</x:String>
+                            <x:String>ANDORRA</x:String>
+                            <x:String>ANGOLA</x:String>
+                            <x:String>ANGUILA</x:String>
+                            <x:String>ANTARTICA</x:String>
+                            <x:String>ANTIGUA &amp; BARBUDA</x:String>
+                            <x:String>ARCTIC OCEAN</x:String>
+                            <x:String>ARGENTINA</x:String>
+                            <x:String>ARMENIA</x:String>
+                            <x:String>ARUBA</x:String>
+                            <x:String>ASHMORE &amp; CARTIER ISLAND</x:String>
+                            <x:String>ATLANTIC OCEAN</x:String>
+                            <x:String>AUSTRALIA</x:String>
+                            <x:String>AUSTRIA</x:String>
+                            <x:String>AZERBAIJAN</x:String>
+                            <x:String>BAHAMAS</x:String>
+                            <x:String>BAHRAIN</x:String>
+                            <x:String>BAKER ISLAND</x:String>
+                            <x:String>BANGLADESH</x:String>
+                            <x:String>BARBADOS</x:String>
+                            <x:String>BASSAS DA INDIA</x:String>
+                            <x:String>BCLARUS</x:String>
+                            <x:String>BELARUS</x:String>
+                            <x:String>BELGIUM</x:String>
+                            <x:String>BELIZE</x:String>
+                            <x:String>BENIN</x:String>
+                            <x:String>BERMUDA</x:String>
+                            <x:String>BHUTAN</x:String>
+                            <x:String>BOLIVIA</x:String>
+                            <x:String>BOSNIA &amp; HERZEGOVINA</x:String>
+                            <x:String>BOTSWANA</x:String>
+                            <x:String>BOUVET ISLAND</x:String>
+                            <x:String>BRAZIL</x:String>
+                            <x:String>BRITISH INDIAN OCEAN</x:String>
+                            <x:String>BRITISH VIRGIN ISLAND</x:String>
+                            <x:String>BRUNEI DARUSSALAM(B.S.BEGAWAN)</x:String>
+                            <x:String>BRUSSELS</x:String>
+                            <x:String>BULGARIA</x:String>
+                            <x:String>BURKINA FASO</x:String>
+                            <x:String>BURUNDI</x:String>
+                            <x:String>CAMBODIA</x:String>
+                            <x:String>CAMEROON</x:String>
+                            <x:String>CANADA</x:String>
+                            <x:String>CAPE VERDE</x:String>
+                            <x:String>CAYMAN ISLANDS</x:String>
+                            <x:String>CENTRAL AFRICAN REPUBLIC</x:String>
+                            <x:String>CHAD</x:String>
+                            <x:String>CHILE</x:String>
+                            <x:String>CHINA</x:String>
+                            <x:String>CHRISTMAS ISLAND</x:String>
+                            <x:String>CLIPPERTON ISLAND</x:String>
+                            <x:String>COCOS/KEELING ISLAND</x:String>
+                            <x:String>COLUMBIA</x:String>
+                            <x:String>COMOROS</x:String>
+                            <x:String>CONGO DEMOCRATIC REP OF THE</x:String>
+                            <x:String>CONGO REPUBLIC OF THE</x:String>
+                            <x:String>COOK ISLAND</x:String>
+                            <x:String>CORAL SEA ISLAND</x:String>
+                            <x:String>COSTA RICA</x:String>
+                            <x:String>COTE D'IVOIRE</x:String>
+                            <x:String>CROATIA</x:String>
+                            <x:String>CUBA</x:String>
+                            <x:String>CYPRUS</x:String>
+                            <x:String>CZECHOSLOVAKIA</x:String>
+                            <x:String>DENMARK</x:String>
+                            <x:String>DJIBOUTI</x:String>
+                            <x:String>DOMINICA</x:String>
+                            <x:String>DOMINICAN REPUBLIC</x:String>
+                            <x:String>ECUADOR</x:String>
+                            <x:String>EGYPT</x:String>
+                            <x:String>EL SALVADOS</x:String>
+                            <x:String>ENGLAND</x:String>
+                            <x:String>EQUATORIAL GUINEA</x:String>
+                            <x:String>ERITREA</x:String>
+                            <x:String>ESTONIA</x:String>
+                            <x:String>ETHIOPIA</x:String>
+                            <x:String>EUROPA ISLAND</x:String>
+                            <x:String>FALKLAND ISLAND</x:String>
+                            <x:String>FAROC ISLAND</x:String>
+                            <x:String>FIJI ISLANDS</x:String>
+                            <x:String>FINLAND</x:String>
+                            <x:String>FRANCE</x:String>
+                            <x:String>FRENCH GUIANA</x:String>
+                            <x:String>FRENCH POLYNESIA</x:String>
+                            <x:String>FRENCH SOUTHERN &amp; ANTARTICA</x:String>
+                            <x:String>GABON</x:String>
+                            <x:String>GAMBIA</x:String>
+                            <x:String>GAZA STRIP</x:String>
+                            <x:String>GEORGIA</x:String>
+                            <x:String>GERMANY</x:String>
+                            <x:String>GHANA</x:String>
+                            <x:String>GIBRALTAR</x:String>
+                            <x:String>GLORIOSA ISLAND</x:String>
+                            <x:String>GREECE</x:String>
+                            <x:String>GREENLAND</x:String>
+                            <x:String>GRENADA</x:String>
+                            <x:String>GUADELOUPE</x:String>
+                            <x:String>GUAM, NORTH PACIFIC OCEAN</x:String>
+                            <x:String>GUATEMALA</x:String>
+                            <x:String>GUERNSEY</x:String>
+                            <x:String>GUINEA</x:String>
+                            <x:String>GUINEA-BISSAU</x:String>
+                            <x:String>GUYANA</x:String>
+                            <x:String>HAITI</x:String>
+                            <x:String>HCARD ISLD &amp; MCDONALD ISLD</x:String>
+                            <x:String>HOLY SEE</x:String>
+                            <x:String>HONDURAS</x:String>
+                            <x:String>HONG KONG</x:String>
+                            <x:String>HOWLAND ISLAND</x:String>
+                            <x:String>HUNGARY</x:String>
+                            <x:String>ICELAND</x:String>
+                            <x:String>INDIA</x:String>
+                            <x:String>INDIAN OCEAN</x:String>
+                            <x:String>INDONESIA</x:String>
+                            <x:String>IRAN</x:String>
+                            <x:String>IRAQ</x:String>
+                            <x:String>IRELAND</x:String>
+                            <x:String>ISLE OF MAN</x:String>
+                            <x:String>ISRAEL</x:String>
+                            <x:String>ITALY</x:String>
+                            <x:String>IVORY COAST</x:String>
+                            <x:String>JAMAICA</x:String>
+                            <x:String>JAN MAYEN</x:String>
+                            <x:String>JAPAN</x:String>
+                            <x:String>JARVIS ISLAND</x:String>
+                            <x:String>JERSEY</x:String>
+                            <x:String>JOHNSTON ATOLL</x:String>
+                            <x:String>JORDAN</x:String>
+                            <x:String>JUAN DE NOVA ISLAND</x:String>
+                            <x:String>KAZAKHSTAN</x:String>
+                            <x:String>KENYA</x:String>
+                            <x:String>KINGMAN REEF</x:String>
+                            <x:String>KIRIBATI</x:String>
+                            <x:String>KOREA REPUBLIC</x:String>
+                            <x:String>KOREA SOUTH</x:String>
+                            <x:String>KOREAN</x:String>
+                            <x:String>KUWAIT</x:String>
+                            <x:String>KYRGYZSTAN</x:String>
+                            <x:String>LAOS</x:String>
+                            <x:String>LATVIA</x:String>
+                            <x:String>LEBANON</x:String>
+                            <x:String>LESOTHO</x:String>
+                            <x:String>LEXEMBOURG</x:String>
+                            <x:String>LIBERIA</x:String>
+                            <x:String>LIBYA</x:String>
+                            <x:String>LIETHUANIA</x:String>
+                            <x:String>LITHUANIA</x:String>
+                            <x:String>MACAU</x:String>
+                            <x:String>MACEDONIA</x:String>
+                            <x:String>MADAGASCAR</x:String>
+                            <x:String>MALAWI</x:String>
+                            <x:String>MALAYSIA</x:String>
+                            <x:String>MALDIVE</x:String>
+                            <x:String>MALI</x:String>
+                            <x:String>MALTA</x:String>
+                            <x:String>MAN, ISLE OF</x:String>
+                            <x:String>MARSHALL ISLAND</x:String>
+                            <x:String>MARTINIQUE</x:String>
+                            <x:String>MAURITANIA</x:String>
+                            <x:String>MAURITIUS</x:String>
+                            <x:String>MAYOTTE</x:String>
+                            <x:String>MEXICO</x:String>
+                            <x:String>MICRONESIA, FEDERATION OF</x:String>
+                            <x:String>MIDWAY ISLAND</x:String>
+                            <x:String>MOLDOVA</x:String>
+                            <x:String>MONACO</x:String>
+                            <x:String>MONGOLIA</x:String>
+                            <x:String>MONTSERRAT</x:String>
+                            <x:String>MOROCCO</x:String>
+                            <x:String>MOZAMBIQUE</x:String>
+                            <x:String>MYANMAR</x:String>
+                            <x:String>NAMIBIA</x:String>
+                            <x:String>NAURU</x:String>
+                            <x:String>NAVASSA ISLAND</x:String>
+                            <x:String>NEPAL</x:String>
+                            <x:String>NETHERLANDS</x:String>
+                            <x:String>NEW CELEDONIA</x:String>
+                            <x:String>NEW ZEALAND</x:String>
+                            <x:String>NICARAGUA</x:String>
+                            <x:String>NIEU</x:String>
+                            <x:String>NIGER</x:String>
+                            <x:String>NIGERIA</x:String>
+                            <x:String>NORFOLK</x:String>
+                            <x:String>NORTH KOREA</x:String>
+                            <x:String>NORTHERN IRELAND</x:String>
+                            <x:String>NORTHERN MARIANA ISLAND</x:String>
+                            <x:String>NORWAY</x:String>
+                            <x:String>OMAN SULTANATE OF</x:String>
+                            <x:String>PACIFIC OCEAN</x:String>
+                            <x:String>PAKISTAN</x:String>
+                            <x:String>PALAU</x:String>
+                            <x:String>PALMYRA ATOLL</x:String>
+                            <x:String>PANAMA</x:String>
+                            <x:String>PAPUA NEW GUINEA</x:String>
+                            <x:String>PARACELL ISLAND</x:String>
+                            <x:String>PARAGUAY</x:String>
+                            <x:String>PERU</x:String>
+                            <x:String>PHILIPPINES</x:String>
+                            <x:String>PITCAIRN ISLAND</x:String>
+                            <x:String>POLAND</x:String>
+                            <x:String>PORTUGAL</x:String>
+                            <x:String>PUERTO RICO</x:String>
+                            <x:String>QATAR</x:String>
+                            <x:String>REUNION ISLANDS</x:String>
+                            <x:String>ROMANIA</x:String>
+                            <x:String>RUSSIA</x:String>
+                            <x:String>RUSSIAN FEDERATION</x:String>
+                            <x:String>RWANDA</x:String>
+                            <x:String>SAINT KITTS &amp; NEVIS</x:String>
+                            <x:String>SAINT LUCIA</x:String>
+                            <x:String>SAMOA</x:String>
+                            <x:String>SAN MARINO</x:String>
+                            <x:String>SAO TOME &amp; PRINCIPE</x:String>
+                            <x:String>SAUDI ARABIA</x:String>
+                            <x:String>SCOTLAND</x:String>
+                            <x:String>SENEGAL</x:String>
+                            <x:String>SERBIA &amp; MONTENEGRO</x:String>
+                            <x:String>SEYCHELLES</x:String>
+                            <x:String>SIERRA LEONE</x:String>
+                            <x:String>SINGAPORE</x:String>
+                            <x:String>SLOVAKIA</x:String>
+                            <x:String>SLOVENIA</x:String>
+                            <x:String>SOLOMON ISLAND</x:String>
+                            <x:String>SOMALIA</x:String>
+                            <x:String>SOUTH AFRICA</x:String>
+                            <x:String>SOUTH GEORGIA/S SANDWICH</x:String>
+                            <x:String>SPAIN</x:String>
+                            <x:String>SPRATLY ISLAND</x:String>
+                            <x:String>SRI LANKA</x:String>
+                            <x:String>ST HELENA</x:String>
+                            <x:String>ST LUCIA</x:String>
+                            <x:String>ST VINCENT &amp; THE GRENADINES</x:String>
+                            <x:String>ST VINCENT AND THE GREDADINES</x:String>
+                            <x:String>SUDAN</x:String>
+                            <x:String>SURINAME</x:String>
+                            <x:String>SVALBARD</x:String>
+                            <x:String>SWAZILAND</x:String>
+                            <x:String>SWEDEN</x:String>
+                            <x:String>SWITZERLAND</x:String>
+                            <x:String>SYRIA</x:String>
+                            <x:String>TAIWAN</x:String>
+                            <x:String>TAJIKISTAN</x:String>
+                            <x:String>TANZANIA</x:String>
+                            <x:String>THAILAND</x:String>
+                            <x:String>TIMOR LESTE</x:String>
+                            <x:String>TOGO</x:String>
+                            <x:String>TOKELAU</x:String>
+                            <x:String>TONGA</x:String>
+                            <x:String>TRINIDAD &amp; TOBAGO</x:String>
+                            <x:String>TROMELIN ISLAND</x:String>
+                            <x:String>TUNISIA</x:String>
+                            <x:String>TURKEY</x:String>
+                            <x:String>TURKMENISTAN</x:String>
+                            <x:String>TURKS &amp; CAICOS ISLAND</x:String>
+                            <x:String>TUVALU</x:String>
+                            <x:String>UGANDA</x:String>
+                            <x:String>UKRAINE</x:String>
+                            <x:String>UNITED ARAB EMIRATES</x:String>
+                            <x:String>UNITED KINGDOM</x:String>
+                            <x:String>UNITED STATES OF AMERICA</x:String>
+                            <x:String>URUGUAY</x:String>
+                            <x:String>UZBEKISTAN</x:String>
+                            <x:String>VANUATU</x:String>
+                            <x:String>VATICAN</x:String>
+                            <x:String>VENEZUELA</x:String>
+                            <x:String>VIETNAM</x:String>
+                            <x:String>VIRGIN ISLAND</x:String>
+                            <x:String>WAKE ISLAND</x:String>
+                            <x:String>WALES</x:String>
+                            <x:String>WALLIS &amp; FUTUNA</x:String>
+                            <x:String>WEST BANK</x:String>
+                            <x:String>WESTERN SAHARA</x:String>
+                            <x:String>WESTERN SAMOA</x:String>
+                            <x:String>YEMEN REPUBLIC</x:String>
+                            <x:String>ZAIRE</x:String>
+                            <x:String>ZAMBIA</x:String>
+                            <x:String>ZIMBABWE</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e39e493786ea508ab4839e3c190a713f" Selector="&lt;webctrl id='Nationality' name='$PpyWorkPage$pTravellingChild$l1$pNationality' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  IDNumber'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Insured Child 1-IC/Passport Number&quot;).ToString]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2818cea0754657c95f2ce13da4c2ba76" Selector="&lt;webctrl id='IDNumber' name='$PpyWorkPage$pTravellingChild$l1$pIDNumber' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <If Condition="[row(&quot;Insured Child 1-Gender&quot;).ToString = &quot;Male&quot;]" DisplayName="Gender" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If.Then>
+                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  GenderMALE_rdi_1'" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5cedb04d716dd623a4b1aef50f627b22" Selector="&lt;webctrl id='GenderMALE' name='$PpyWorkPage$pTravellingChild$l1$pGender' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </If.Then>
+                        <If.Else>
+                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  GenderFEMALE_rdi...'" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c402662ee112265e03a229e1a31c41da" Selector="&lt;webctrl id='GenderFEMALE' name='$PpyWorkPage$pTravellingChild$l1$pGender' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Then>
+                </If>
+                <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="pgdn" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+                <If Condition="[row(&quot;Policy Holder Type&quot;).ToString = &quot;Individual&quot;]" DisplayName="Policy Holder Type" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If.Then>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  IsCorporateClien...'" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9624000ba92aca88489b23b4c5cecb2f" Selector="&lt;webctrl id='IsCorporateClientIndividual' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </If.Then>
+                  <If.Else>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  IsCorporateClien...'" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d484f5f443f624337dc3eeb79807ef78" Selector="&lt;webctrl id='IsCorporateClientCorporate' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </If.Else>
+                </If>
+                <If Condition="[row(&quot;Is Policy Holder Same as Main Insured&quot;).ToString = &quot;Yes&quot;]" DisplayName="Same as Main Insurer " sap2010:WorkflowViewState.IdRef="If_5">
+                  <If.Then>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  IsMainTravellerP...'" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="71b601497a6024bc3b99c7e55e11d587" Selector="&lt;webctrl id='IsMainTravellerPolicyHolderYes' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </If.Then>
+                  <If.Else>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  IsMainTravellerP...'" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e15ca1399f408c2665d3da189109f94d" Selector="&lt;webctrl id='IsMainTravellerPolicyHolderNo' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </If.Else>
+                </If>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  GivenName'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Preffered Name&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f9c2b3c838b3675873443056cc0d10ad" Selector="&lt;webctrl id='GivenName' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select item 'SELECT  MaritalStatus'" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="[row(&quot;Marital Status&quot;).ToString.ToUpper]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="8">
+                      <x:String>--</x:String>
+                      <x:String>DIVORCED</x:String>
+                      <x:String>MARRIED</x:String>
+                      <x:String>SINGLE</x:String>
+                      <x:String>WIDOWED</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1e72a2e14a1186c30b7de2b423c33dab" Selector="&lt;webctrl id='MaritalStatus' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  AddressLine4'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Street/Block Name&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a1c643f8e3572712a9bbae786dd9f02d" Selector="&lt;webctrl id='AddressLine4' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  AddressLine4'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Street Name&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b72e558f34bbafd50f69500a8234ff66" Selector="&lt;webctrl id='AddressLine3' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  AddressLine4'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_8" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Address-City/District&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4ce6b4cfbc7c9d86fe00ed3b745257d0" Selector="&lt;webctrl id='AddressLine2' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select item 'SELECT  AddressLine1'" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="[row(&quot;Address-State&quot;).ToString.ToUpper]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="32">
+                      <x:String>--</x:String>
+                      <x:String>JOHOR</x:String>
+                      <x:String>KEDAH</x:String>
+                      <x:String>KELANTAN</x:String>
+                      <x:String>LABUAN</x:String>
+                      <x:String>MELAKA</x:String>
+                      <x:String>NEGERI SEMBILAN</x:String>
+                      <x:String>PAHANG</x:String>
+                      <x:String>PERAK</x:String>
+                      <x:String>PERLIS</x:String>
+                      <x:String>PULAU PINANG</x:String>
+                      <x:String>PUTRAJAYA</x:String>
+                      <x:String>SABAH</x:String>
+                      <x:String>SARAWAK</x:String>
+                      <x:String>SELANGOR</x:String>
+                      <x:String>TERENGGANU</x:String>
+                      <x:String>WILAYAH PERSEKUTUAN</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9856d6a184e38c2988b6f6f9b0f0ef1f" Selector="&lt;webctrl id='AddressLine1' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  PostalCode'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_9" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Address-PostCode&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="90df13f2a3aa00857c858683b591bc1a" Selector="&lt;webctrl id='PostalCode' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select item 'SELECT  pyCountry'" sap2010:WorkflowViewState.IdRef="SelectItem_5" Item="[row(&quot;Address-Country&quot;).ToString]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="4">
+                      <x:String>--</x:String>
+                      <x:String>Malaysia</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="456140feb2cb8ab99d0064701fb68584" Selector="&lt;webctrl id='pyCountry' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  pyPhoneNumber'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_10" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Mobile Phone&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dd141135ab1af4827e7e92ede5e54634" Selector="&lt;webctrl id='pyPhoneNumber' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into 'INPUT  Email'" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_11" SendWindowMessages="False" SimulateType="True" Text="[row(&quot;Email id&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="12988e3c4565cca2f6ce4bc20af80c00" Selector="&lt;webctrl id='Email' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="pgdn" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+                <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'DIV'" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d2dfcf8941a4364cdfb8a10e97757ade" Selector="&lt;webctrl aaname='NEXT &amp;gt;' css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;button&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='RULE_KEY' parentname='BASE_REF' tag='DIV' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  TnCAccepted'" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ec5770bf8de9101f8cd70a922eae25f8" Selector="&lt;webctrl id='TnCAccepted' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'LABEL'" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9cd63f20d42851ab892dad1fa27099da" Selector="&lt;webctrl aaname='Transaction Limit' parentid='TABSPAN' tag='LABEL' /&gt;" WaitForReady="COMPLETE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="5000" DisplayName="Click 'DIV'" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5c1e428e42e17cc09d65ca9d494baa80" Selector="&lt;webctrl aaname='NEXT &amp;gt;' idx='2' parentid='RULE_KEY' parentname='BASE_REF' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <Delay Duration="00:00:10" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[lastpage]" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="53ef73fb2e2974e098e3a467b57ee5dc" Selector="&lt;webctrl aaname='Policy Details' parentid='RULE_KEY' tag='SPAN' /&gt;" TimeoutMS="30000" WaitForReady="COMPLETE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <If Condition="[lastpage = True]" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If.Then>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                        <ui:GetValue.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8217572470e21b0b3fab8b770d1b4f1e" Selector="&lt;webctrl omit:aaname='GA100673' parentid='RULE_KEY' tag='SPAN' /&gt;" TimeoutMS="30000" WaitForReady="COMPLETE" />
+                        </ui:GetValue.Target>
+                        <ui:GetValue.Value>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[policyNo]</OutArgument>
+                        </ui:GetValue.Value>
+                      </ui:GetValue>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[policyNo.ToString]" TopMost="True" />
+                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="20405177520cdab02bbd2ff4eb075bf1" Selector="&lt;webctrl aaname='BACK' tag='A' /&gt;" WaitForReady="COMPLETE" />
+                        </ui:Click.Target>
+                      </ui:Click>
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </ui:BrowserScope.Body>
+        </ui:BrowserScope>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <sads:DebugSymbol.Symbol>d1VDOlxVc2Vyc1xqb3RoeXByYXNhbnRoLm1cRG9jdW1lbnRzXFVpUGF0aFxUcmF2ZWxCdXNpbmVzc19pQ29ubmVjdFxBY2NlcHRhbmNlUGFnZS54YW1sc0YDlAgPAgEBSQmPCBsCAQJJogJJxwICAXZPD4wIGgIBA1QRWCYCAXNZEV0hAgFyXhFiHwIBbmMRhAMhAgFqhQMRiQMfAgFnigMRrQMWAgFhrgMRgwYWAgFOhAYRiAYhAgFNiQYRrAYWAgFHrQYR0AYWAgFB0QYR1QYfAgE+1gYR4wYhAgE75AYR6AYfAgE46QYR7QYfAgE17gYR8gYfAgEy8wYRjAchAgEvjQcRkQcfAgEskgcRnAchAgEpnQcRoQcfAgEmogcRpgcfAgEjpwcRqwchAgEirAcRugccAgEfuwcRyQccAgEdygcR2AccAgEb2QcR5wccAgEY6AcR6AdYAgEW6QcR7QcmAgER7gcRiwgWAgEEVo8BVtkBAgF1VuQBVuoBAgF0YKQBYIICAgFxXqcCXtgCAgFwXoMBXokBAgFvY11jYgIBbGPHAWOHAgIBa4IDpAGCA4sCAgFthwOkAYcDhAICAWmFA6wChQPrAgIBaIoDH4oDZQIBYowDFZoDIAIBZZ0DFasDIAIBY64DH64DXwIBT7ADFYEGIAIBUIkGH4kGaAIBSIsGFZkGIAIBS5wGFaoGIAIBSa0GH60GdAIBQq8GFb0GIAIBRcAGFc4GIAIBQ9MGpAHTBtIBAgFA0QatAtEG2QICAT/WBs4B1gaCAgIBPOEGpAHhBtcBAgE95gakAeYG1QECATrkBrAC5AbfAgIBOesGpAHrBtUBAgE36QawAukG2QICATbwBqQB8AbVAQIBNO4GsALuBuMCAgEz8wbNAfMGgAICATCKB6QBigfWAQIBMY8HpAGPB9MBAgEujQeuAo0H3AICAS2SB8oBkgf3AQIBKpoHpAGaB9MBAgErnwekAZ8H1gECASidB7ICnQfcAgIBJ6QHpAGkB84BAgElogeqAqIH0AICASS4B6QBuAfNBQIBIawHU6wHWQIBIMcHpAHHB9QBAgEe1gekAdYH8QECARzlB6QB5QeKAgIBGtkHU9kHWQIBGegHIegHKwIBF+sHjwHrB9kBAgEV6wfkAesH6wECARTpB1DpB1wCARLuBx/uBzICAQXwBxWJCCACAQeYA6gBmAPyAQIBZqkDqAGpA9kBAgFksQMXtQMlAgFdtgMX1wUnAgFa2AUX3AUlAgFX3QUXgAYcAgFRlwaoAZcG6AECAUyoBqgBqAbnAQIBSrsGqAG7BusBAgFGzAaoAcwG6gECAUTxBxf4ByUCAQz5Bxf5B9MBAgEK+gcXiAgiAgEIswOqAbMDhwICAWCxA60CsQPfAgIBX7EDiQGxA48BAgFetgPSAbYDkwICAVvVBaoB1QWQAgIBXNoFqgHaBYkCAgFZ2AWyAtgF8gICAVjdBSXdBWwCAVLfBRvtBSYCAVXwBRv+BSYCAVP2B0r2B1QCAQ3zB5UB8wfeAQIBEPMH6QHzB/ABAgEP+QesAfkHwQECAQuGCKoBhgjTAQIBCesFrgHrBY0CAgFW/AWuAfwFjwICAVQ=</sads:DebugSymbol.Symbol>
+  </Flowchart>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="UiElementExists_1" sap:VirtualizedContainerService.HintSize="800,106" />
+      <sap2010:ViewStateData Id="SendHotkey_3" sap:VirtualizedContainerService.HintSize="800,116" />
+      <sap2010:ViewStateData Id="TypeInto_1" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="SelectItem_1" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="TypeInto_2" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="653,254">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TypeInto_3" sap:VirtualizedContainerService.HintSize="653,134" />
+      <sap2010:ViewStateData Id="SelectItem_2" sap:VirtualizedContainerService.HintSize="653,134" />
+      <sap2010:ViewStateData Id="TypeInto_4" sap:VirtualizedContainerService.HintSize="653,134" />
+      <sap2010:ViewStateData Id="Click_3" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Click_4" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="653,254">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="675,900">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="800,1048">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SendHotkey_1" sap:VirtualizedContainerService.HintSize="800,116" />
+      <sap2010:ViewStateData Id="Click_5" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Click_6" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="If_4" sap:VirtualizedContainerService.HintSize="653,254">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Click_7" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Click_8" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="If_5" sap:VirtualizedContainerService.HintSize="653,254">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TypeInto_5" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="SelectItem_3" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="TypeInto_6" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="TypeInto_7" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="TypeInto_8" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="SelectItem_4" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="TypeInto_9" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="SelectItem_5" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="TypeInto_10" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="TypeInto_11" sap:VirtualizedContainerService.HintSize="800,134" />
+      <sap2010:ViewStateData Id="SendHotkey_2" sap:VirtualizedContainerService.HintSize="800,116" />
+      <sap2010:ViewStateData Id="Click_9" sap:VirtualizedContainerService.HintSize="800,106" />
+      <sap2010:ViewStateData Id="Click_10" sap:VirtualizedContainerService.HintSize="800,106" />
+      <sap2010:ViewStateData Id="Click_11" sap:VirtualizedContainerService.HintSize="800,106" />
+      <sap2010:ViewStateData Id="Click_12" sap:VirtualizedContainerService.HintSize="800,106" />
+      <sap2010:ViewStateData Id="Delay_1" sap:VirtualizedContainerService.HintSize="800,22" />
+      <sap2010:ViewStateData Id="UiElementExists_2" sap:VirtualizedContainerService.HintSize="800,106" />
+      <sap2010:ViewStateData Id="GetValue_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="MessageBox_8" sap:VirtualizedContainerService.HintSize="314,59" />
+      <sap2010:ViewStateData Id="Click_13" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="336,475">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_6" sap:VirtualizedContainerService.HintSize="800,623" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="822,6385">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_1" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="614,636">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="AcceptancePage_1" sap:VirtualizedContainerService.HintSize="654,716" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
