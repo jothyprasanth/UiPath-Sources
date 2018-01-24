@@ -1,0 +1,1 @@
+This is another ouput format of bank reconciliation process 

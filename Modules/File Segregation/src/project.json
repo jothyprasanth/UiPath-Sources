@@ -1,0 +1,14 @@
+{
+  "name": "src",
+  "description": "Project",
+  "main": "D:\\Documents\\Uipath Backup 4-july-17\\rpa_common_modules\\Tasks\\Axa Tasks\\File Segregation\\src\\Seggregate_Files.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "17.1.6435.21855",
+  "projectVersion": "1.0.6492.23722",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

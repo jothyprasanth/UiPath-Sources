@@ -1,0 +1,14 @@
+{
+  "name": "Task6",
+  "description": "Project",
+  "main": "D:\\Documents\\Uipath Backup 4-july-17\\rpa_common_modules\\Tasks\\Axa Tasks\\Task6\\Task6.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "17.1.6435.21855",
+  "projectVersion": "1.0.6507.21869",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

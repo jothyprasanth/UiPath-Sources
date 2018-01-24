@@ -1,0 +1,14 @@
+{
+  "name": "Find the Maximum RDOCNUM in the excel files",
+  "description": "Project",
+  "main": "D:\\Documents\\Uipath Backup 4-july-17\\rpa_common_modules\\Tasks\\Axa Tasks\\Find the Maximum RDOCNUM in the excel files\\task_6_get_MAX_RDOCNUM.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "17.1.6435.21855",
+  "projectVersion": "1.0.6507.21831",
+  "packOptions": {},
+  "runtimeOptions": {}
+}
